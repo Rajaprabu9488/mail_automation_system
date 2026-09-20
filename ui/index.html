@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <!-- show the title on screen  -->
+        <div class="title_place">
+            <h2>E-MAIL AUTOMATOR</h2>
+        </div>
+
+        <!-- display Email activity on screen -->
+        <div class="content_body">
+
+            <!-- left panel -->
+            <div class="left_panel">
+                <div class="left_panel_title"> <img class="left_panel_img" src="./assets/icons8-mail-96.png"> <p>All Mail</p></div>
+                <div id="option_list" class="option_list">
+                    <div class="option" onclick="left_panel_selection('INBOX')">
+                        <img src="./assets/icons8-inbox-64.png">
+                        <p>INBOX</p>
+                    </div>
+                    <div class="option" onclick="left_panel_selection('SEND MAIL')">
+                        <img src="./assets/icons8-send-96.png">
+                        <p>SEND MAIL</p>
+                    </div>
+                    <div class="option" onclick="left_panel_selection('IMPORTANT')">
+                        <img src="./assets/icons8-star-96.png">
+                        <p>IMPORTANT</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- right panel -->
+            <div class="right_panel">
+
+                <div id="show_mails">
+                    <!-- search panel -->
+                    <div class="search_panel">
+                        <h1 id="right_panel_title" class="right_panel_title">INBOX</h1>
+                        <div class="filter_box">
+                            <input type="text" class="filter_bar" placeholder="Search">
+                            <button class="search_btn"><img src="./assets/icons8-search-50.png"></button>
+                        </div>
+                    </div>
+
+                    <div id="mail_list" class="mail_list">
+                    <!-- Email List -->
+                    </div>
+                </div>
+
+                <!-- show details panel -->
+                 <div id="show_details">
+                    <!-- details panel -->
+                    <div class="details_panel">
+                        <!-- subject panel -->
+                        <div id="subject_panel" class="subject_panel">
+
+                        </div>
+                        <!-- sender name and sender email -->
+                        <div id="sender_details" class="sender_details">
+                     
+
+                        </div>
+
+                        <!-- email content -->
+                         <div class="body_content">
+                            <div class="message_body" id="message_body">
+
+                            
+                            </div>
+                            <div id="attachment_panel" class="attachment_panel">
+
+
+                            </div>
+                         </div>
+                        
+                        
+                    </div>
+
+                    <!-- reply lies -->
+                    <div id="reply_suggester" class="reply_suggester">
+                        <div id="suggestions" class="suggestions">
+                            <div class="suggest_header"><h3> Here is Suggestion for Reply:</h3></div>
+                            <div id="suggest_box">
+
+                            </div>
+
+                        </div>
+                        <div class="reply_text">
+                            <p>REPLY</p>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="email-compose-panel"> 
+                        <div class="compose-header"> 
+                            <h2>New Email</h2> 
+                        </div> 
+                        <div class="compose-form"> 
+                            <!-- TO --> 
+                             <div class="form-row"> 
+                                <label>To</label> 
+                                <input type="text" id="mail-to" placeholder="Recipient email" readonly > 
+                            </div> 
+                            <!-- SUBJECT --> 
+                             <div class="form-row"> 
+                                <label>Subject</label> 
+                                <input type="text" id="mail-subject" placeholder="Email subject" > 
+                            </div> 
+                            <!-- BODY --> 
+                             <div class="form-row body-row"> 
+                                <label>Body</label> 
+                                <textarea id="mail-body" placeholder="Write your email..." ></textarea> 
+                            </div> 
+                            <!-- ATTACHMENT --> 
+                             <div class="attachment-section"> 
+                                <label class="attachment-button"> 📎 Attach File 
+                                    <input type="file" id="mail-attachment" multiple hidden onchange="displayAttachments()" > 
+                                </label> <div id="attachment-list"></div> </div> 
+                                <!-- SEND --> 
+                                 <div class="compose-footer"> 
+                                    <button class="send-button" onclick="sendEmail()" > Send </button> 
+                                </div> 
+                            </div> 
+                        </div>
+                 </div>
+                
+            </div>
+        </div>
+        <div id="download_popup" class="download_popup">
+            <span id="download_message"></span>
+        </div>
+    </body>
+    <script src="app.js"></script>
+</html>
